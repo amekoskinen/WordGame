@@ -36,7 +36,7 @@ body {
     }
     .gameScreen {
       height: 70vh;
-      width: 70%;  
+      width: 80%;  
       background-color: var(--primary-bg-color);
       border-radius: 12px;
       box-shadow: 0 0 20px rgba(0,0,0,0.2);
