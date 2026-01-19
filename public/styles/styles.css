@@ -53,7 +53,7 @@ body {
     }
     .startButton{
         margin-top: auto;
-        width: 20%;
+        width: 50%;
         text-align: center;
     }
     .form-control:disabled {
