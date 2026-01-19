@@ -19,8 +19,8 @@ body {
     }
     
     .startingScreen {
-      height: 90vh;
-      width: 90%;  
+      height: 80vh;
+      width: 80%;  
       background-image: url("/images/startingPage.png"); 
       background-size: cover;
       background-position: center;
