@@ -28,7 +28,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.set('strict routing', false);
 
-app.use(express.static('assets'))
+app.use(express.static('public'))
 app.use(session(sessionOptions));
 app.use(flash());
 
