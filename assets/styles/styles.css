@@ -1,0 +1,76 @@
+  :root{
+        --primary-bg-color: #F6F0D7;
+        --box-color: #c8d1b9;
+        --secondary-bg-color : #C5D89D;
+        --text-color: #89986D;
+    }
+
+body {
+      margin: 0;
+      padding: 0;
+      background: #F6F0D7;
+      background: linear-gradient(90deg,rgba(246, 240, 215, 1) 0%, rgba(197, 216, 157, 0.52) 50%, rgba(137, 152, 109, 1) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container{
+      width: 60%;
+      height: 90%;
+      margin: auto;
+    }
+    .startingScreen {
+      height: 100%;
+      width: 100%;  
+      background-image: url("/images/startingPage.png"); /* update path */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .gameScreen {
+      height: 100%;
+      width: 100%;  
+      background-color: var(--primary-bg-color);
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+    }
+    .letterRow{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .startButton{
+        margin-top: auto;
+        width: 20%;
+        text-align: center;
+    }
+    .form-control:disabled {
+        background-color:var(--box-color);
+    }
+    .guessRow{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: center;
+    }
+
+    .correct{
+      background-color: green!important
+    }
+    .incorrect{
+      background-color: yellow!important
+    }
+    .wrong{
+      background-color: grey;
+    }
+
+  
