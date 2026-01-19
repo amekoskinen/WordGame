@@ -1,7 +1,8 @@
-
   document.addEventListener("DOMContentLoaded", () => {
     const inputs = document.querySelectorAll(".guessRow input");
-
+    if (inputs.length > 0) {
+    inputs[0].focus();
+   }
     inputs.forEach((input, index) => {
       input.addEventListener("input", () => {
         if (input.value.length === 1 && index < inputs.length - 1) {

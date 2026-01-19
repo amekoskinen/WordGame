@@ -15,16 +15,13 @@ body {
       justify-content: center;
       align-items: center;
       height: 100vh;
+      width: 100vw;
     }
-    .container{
-      width: 60%;
-      height: 90%;
-      margin: auto;
-    }
+    
     .startingScreen {
-      height: 100%;
-      width: 100%;  
-      background-image: url("/images/startingPage.png"); /* update path */
+      height: 90vh;
+      width: 90%;  
+      background-image: url("/images/startingPage.png"); 
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -35,8 +32,8 @@ body {
       flex-grow: 1;
     }
     .gameScreen {
-      height: 100%;
-      width: 100%;  
+      height: 70vh;
+      width: 70%;  
       background-color: var(--primary-bg-color);
       border-radius: 12px;
       box-shadow: 0 0 20px rgba(0,0,0,0.2);

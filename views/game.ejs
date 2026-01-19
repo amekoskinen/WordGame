@@ -1,7 +1,9 @@
 <% layout('layouts/boilerplate') -%>
 
 <div class="container">
-  <div class="gameScreen">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+    <div class="gameScreen">
     <!-- GUESS 1 -->
     <div class="letterRow mx-4 mt-3" id="guess1">
       <div class="col-1">
@@ -362,6 +364,7 @@
             class="form-control"
             name="letter1"
             maxlength="1"
+            required
           />
         </div>
         <div class="col-1">
@@ -370,6 +373,7 @@
             class="form-control"
             name="letter2"
             maxlength="1"
+            required
           />
         </div>
         <div class="col-1">
@@ -378,6 +382,7 @@
             class="form-control"
             name="letter3"
             maxlength="1"
+            required
           />
         </div>
         <div class="col-1">
@@ -386,6 +391,7 @@
             class="form-control"
             name="letter4"
             maxlength="1"
+            required
           />
         </div>
         <div class="col-1">
@@ -394,6 +400,7 @@
             class="form-control"
             name="letter5"
             maxlength="1"
+            required
           />
         </div>
         <div class="col-1">
@@ -402,6 +409,7 @@
             class="form-control"
             name="letter6"
             maxlength="1"
+            required
           />
         </div>
       </div>
@@ -411,6 +419,8 @@
       </div>
     </form>
   </div>
+</div>
+</div>
 </div>
 <div class="container">
 <% if(winner>0){%>
@@ -423,7 +433,7 @@
       </div>
       <div class="modal-body">
         <div class="row">
-      <% if (winner=1){ %>
+      <% if (winner==1){ %>
         <h1 class="text-center">CONGRATULATIONS!</h1>
       <% } else { %>
         <h1 class="text-center">GAME OVER</h1>

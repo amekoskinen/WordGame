@@ -26,14 +26,12 @@ const playGame = async(req,res) => {
             answerObj[`color${row}${col}`] = "";   // new
         }
     }
-    console.log(answerObj)
   }
   const row = req.session.round+1
   for (let i=1; i<7; i++){
     answerObj[`letter${row}${i}`] = guess[i-1].toUpperCase()
   }
   req.session.round ++
-  console.log(req.session.word)
 
   let used = Array(6).fill(false);
 
@@ -56,9 +54,9 @@ const playGame = async(req,res) => {
   }
 
     if (found) {
-    answerObj[`color${row}${i+1}`] = "incorrect";  // yellow
+    answerObj[`color${row}${i+1}`] = "incorrect";  
     } else {
-    answerObj[`color${row}${i+1}`] = "wrong";      // gray
+    answerObj[`color${row}${i+1}`] = "wrong";      
   }
 }
   if (req.session.points == 6){
@@ -68,7 +66,6 @@ const playGame = async(req,res) => {
     }
     correctWord = req.session.word
     correctWord = correctWord.join("")
-    console.log(correctWord)
     return res.render('game', {correctWord: correctWord, catURL: catURL, winner:1,...answerObj})
   }
   if (req.session.round ==6){
@@ -78,7 +75,7 @@ const playGame = async(req,res) => {
     }
     correctWord = req.session.word
     correctWord = correctWord.join("")
-    return res.render('game', {correctWord: correctWord, catURL: catURL,...answerObj})
+    return res.render('game', {correctWord: correctWord, catURL: catURL, winner:2,...answerObj})
   }
   res.render('game', answerObj)
 }
