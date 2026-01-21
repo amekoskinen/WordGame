@@ -1,7 +1,7 @@
 if(process.env.NODE_ENV !=="production"){
     require('dotenv').config({ quiet: true});
 }
-
+const mongoose = require('mongoose')
 const express = require('express');
 const path = require('path');
 const methodOverride = require('method-override');
@@ -19,6 +19,14 @@ const sessionOptions = { secret: 'NOTCONFIGURED', resave: false, saveUninitializ
         maxAge: 1000 * 60 * 60 * 24 * 7
        }
 }
+
+mongoose.connect('mongodb://127.0.0.1:27017/wordGame');
+
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', () => {
+  console.log('Database connected');
+});
 
 const app = express();
 app.engine('ejs', ejsMate);
@@ -49,6 +57,11 @@ app.use((err, req, res, next) => {
   if (!err.message) err.message = 'Oh No, Something Went Wrong!';
   res.status(statusCode).render('error', { err });
 });
+
+app.get('/quit', (res,req) => {
+  mongoose.connection.close()
+  app.close()
+})
 
 app.listen(3000, () => {
   console.log(`Server is running on http://localhost:3000`);

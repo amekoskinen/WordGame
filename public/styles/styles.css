@@ -32,16 +32,27 @@ main {
 }
 
 .guessButton {
-  background-color: aqua;
-  color: black;
+  font-weight: bold;
   width: 50%;
   max-width: 25vw;
+}
+
+.playButton {
+  font-weight: bold;
 }
 
 .col-1 {
   margin: 0.3rem 0.3rem;
 }
 
+#highscore-title{
+  color: rgb(255, 255, 1);
+  font-weight:bold;
+}
+
+#playerName{
+  width: 50%;
+}
 
 /* Starting screen — mobile default */
 .startingScreen {
@@ -54,16 +65,15 @@ main {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   flex-shrink: 0;
 }
 
 .startButton {
+  font-weight: bold;
   margin-top: auto;
   width: 50%;
   text-align: center;
@@ -85,6 +95,26 @@ main {
   margin: 0;
 }
 
+/* Option screen- mobile default */
+
+.optionScreen{
+  height: 100vh;
+  width: 100vw;
+  min-width: 350px;
+  margin: 0;
+  padding: 0;
+  background-image: url("/images/highscore.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  flex-shrink: 0;
+}
+
 /* Rows */
 .letterRow,
 .guessRow {
@@ -95,7 +125,7 @@ main {
 }
 
 .col-1 input {
-  background-color: rgba(47, 255, 134, 0.507);
+  background-color: rgb(122, 122, 80);
   height: 3rem;
   width: 3rem;
   font-weight: bold;
@@ -108,16 +138,13 @@ main {
 }
 
 /* ------------------------------ */
-/* 📱 Tablet (550px–800px)        */
+/* Tablet (550px–800px)        */
 /* ------------------------------ */
 @media (min-width: 550px) and (max-width: 800px) {
 
   body {
-    background: radial-gradient(circle,
-      rgba(246, 240, 215, 1) 0%,
-      rgba(197, 216, 157, 0.52) 50%,
-      rgba(109, 152, 123, 0.11) 100%
-    );
+    background: #E3DB9D;
+    background: radial-gradient(circle, rgba(153, 141, 63, 1) 0%, rgba(212, 196, 95, 0.14) 50%,rgb(231, 229, 215) 100%);
   }
 
   .startingScreen {
@@ -138,36 +165,53 @@ main {
     align-items: center;
     margin: auto;
   }
+  .optionScreen{
+    height: 90vh;
+    width: 80vw;
+    max-height: 90vh;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  }
 }
 
 /* ------------------------------ */
-/* 🖥️ Desktop (800px+)            */
+/* Desktop (800px+)            */
 /* ------------------------------ */
 @media (min-width: 800px) {
-
   body {
-    background: radial-gradient(circle,
-      rgba(246, 240, 215, 1) 0%,
-      rgba(197, 216, 157, 0.52) 50%,
-      rgba(109, 152, 123, 0.11) 100%
-    );
+    background: #E3DB9D;
+    background: radial-gradient(circle, rgba(153, 141, 63, 1) 0%, rgba(212, 196, 95, 0.14) 50%,rgb(231, 229, 215) 100%);
   }
 
   .startingScreen {
     height: 90vh;
     width: 60vw;
     background-size: contain;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
   }
 
   .gameScreen {
     height: 80vh;
     width: 50vw;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
     justify-content: center;
     align-items: center;
     margin: auto;
   }
+  .optionScreen{
+    height: 90vh;
+    width: 60vw;
+    background-size: contain;
+  }
+  .wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+
+  .startButton {
+  margin-top: auto;
+  width: 40%;
+  text-align: center;
+}
 }
