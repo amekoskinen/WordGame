@@ -62,7 +62,7 @@ const playGame = async(req,res) => {
   if (req.session.points == 6){
     const catURL = await getCatImage()
     if(!catURL){
-        catUrl = "/images/Cat.png"
+        catUrl = "/images/cat.png"
     }
     correctWord = req.session.word
     correctWord = correctWord.join("")
@@ -71,7 +71,7 @@ const playGame = async(req,res) => {
   if (req.session.round ==6){
     const catURL = await getCatImage()
     if(!catURL){
-        catUrl = "/images/Cat.png"
+        catUrl = "/images/cat.png"
     }
     correctWord = req.session.word
     correctWord = correctWord.join("")
