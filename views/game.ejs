@@ -1,11 +1,8 @@
 <% layout('layouts/boilerplate') -%>
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 offset-md-2">
     <div class="gameScreen">
+      <img src="/images/caticon.png" class="cat-icon" alt='"https://www.flaticon.com/free-icons/kitty" title="kitty icons">Kitty icons created by Boris farias - Flaticon'>
     <!-- GUESS 1 -->
-    <div class="letterRow mx-4 mt-3" id="guess1">
+    <div class="letterRow" id="guess1">
       <div class="col-1">
         <input
           type="text"
@@ -63,7 +60,7 @@
     </div>
 
     <!-- GUESS 2 -->
-    <div class="letterRow mx-4 mt-3" id="guess2">
+    <div class="letterRow" id="guess2">
       <div class="col-1">
         <input
           type="text"
@@ -121,7 +118,7 @@
     </div>
 
     <!-- GUESS 3 -->
-    <div class="letterRow mx-4 mt-3" id="guess3">
+    <div class="letterRow" id="guess3">
       <div class="col-1">
         <input
           type="text"
@@ -179,7 +176,7 @@
     </div>
 
     <!-- GUESS 4 -->
-    <div class="letterRow mx-4 mt-3" id="guess4">
+    <div class="letterRow" id="guess4">
       <div class="col-1">
         <input
           type="text"
@@ -237,7 +234,7 @@
     </div>
 
     <!-- GUESS 5 -->
-    <div class="letterRow mx-4 mt-3" id="guess5">
+    <div class="letterRow" id="guess5">
       <div class="col-1">
         <input
           type="text"
@@ -295,7 +292,7 @@
     </div>
 
     <!-- GUESS 6 -->
-    <div class="letterRow mx-4 mt-3" id="guess6">
+    <div class="letterRow" id="guess6">
       <div class="col-1">
         <input
           type="text"
@@ -415,7 +412,7 @@
       </div>
 
       <div class="text-center mt-3">
-        <button type="submit" class="btn btn-primary">GUESS!</button>
+        <button type="submit" class="btn btn-primary guessButton mb-3 mt-5">GUESS!</button>
       </div>
     </form>
   </div>
@@ -451,14 +448,11 @@
       </div>
       
       <div class="modal-footer text-center">
-        <form action="/" method="GET">
+        <form action="/">
         <button type="submit" class="btn btn-primary">PLAY AGAIN</button>
         </form>
       </div>
     </div>
-  </div>
-</div>
-</div>
 <% } %>
 <%- "<script>" %>
   document.addEventListener("DOMContentLoaded", () => {

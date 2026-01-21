@@ -6,7 +6,11 @@
     inputs.forEach((input, index) => {
       input.addEventListener("input", () => {
         if (input.value.length === 1 && index < inputs.length - 1) {
+          input.value = input.value.toUpperCase()
           inputs[index + 1].focus();
+        }
+        if(index === inputs.length-1){
+          input.value = input.value.toUpperCase()
         }
       });
 
