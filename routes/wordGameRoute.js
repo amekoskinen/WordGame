@@ -1,6 +1,7 @@
 const express = require('express')
 const {playGame, addOptions} = require('../wordgame')
 const router = express.Router()
+const mongoose = require('mongoose')
 
 
 router.get('/', (req, res) => {
@@ -40,6 +41,12 @@ router.get('/game', (req, res) => {
 
 
 router.post('/game', playGame)
+
+router.get('/quit', async (req, res) => {
+  await mongoose.connection.close();
+  console.log('Server is shutting down...');
+  res.render('quit')
+});
 
 
 module.exports = router;

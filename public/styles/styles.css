@@ -115,6 +115,25 @@ main {
   flex-shrink: 0;
 }
 
+/* Quit screen - mobile default */
+
+.quitScreen {
+  height: 100vh;
+  width: 100vw;
+  min-width: 350px;
+  margin: 0;
+  padding: 0;
+  background-image: url("/images/wavingcat.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
 /* Rows */
 .letterRow,
 .guessRow {
@@ -172,6 +191,13 @@ main {
     border-radius: 12px;
     box-shadow: 0 0 20px rgba(0,0,0,0.2);
   }
+  .quitScreen{
+    height: 90vh;
+    width: 80vw;
+    max-height: 90vh;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  }
 }
 
 /* ------------------------------ */
@@ -206,7 +232,12 @@ main {
   flex-direction: column;
   justify-content: flex-end;
   height: 100%;
-}
+  }
+  .quitScreen {
+    height: 90vh;
+    width: 60vw;
+    background-size: contain;
+  }
 
 
   .startButton {

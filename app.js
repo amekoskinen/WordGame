@@ -46,7 +46,11 @@ app.use((req, res, next) => {
     next();
 })
 
-app.use('/', wordGameRoute);
+app.use('/wordgame/', wordGameRoute);
+
+app.get('/', (req,res) => {
+  res.redirect('/wordgame/')
+})
 
 app.all('/{*any}', (req, res, next) => {
   next(new ExpressError('Page Not Found', 404));
@@ -57,11 +61,6 @@ app.use((err, req, res, next) => {
   if (!err.message) err.message = 'Oh No, Something Went Wrong!';
   res.status(statusCode).render('error', { err });
 });
-
-app.get('/quit', (res,req) => {
-  mongoose.connection.close()
-  app.close()
-})
 
 app.listen(3000, () => {
   console.log(`Server is running on http://localhost:3000`);

@@ -10,7 +10,6 @@ const playGame = async(req,res) => {
   for (let i=0; i<letters; i++){
     guess.push(req.body[`letter${i+1}`].toUpperCase());
   }
-  console.log("GUESS", guess)
   const row = req.session.round+1
   for (let i=1; i<letters+1; i++){
     answerObj[`letter${row}${i}`] = guess[i-1]

@@ -24,7 +24,7 @@
       <p class="h3">GUESS THE WORD!</p>
     </div>
 
-    <form action="/game" method="POST">
+    <form action="/wordgame/game" method="POST">
       <div class="guessRow mx-4 mt-5">
       <% for (let i = 1; i <= letters; i++) { %>
       <div class="col-1">
@@ -40,7 +40,7 @@
       </div>
 
       <div class="text-center mt-3">
-        <button type="submit" class="btn btn-dark text-white guessButton p-2 mb-3 mt-5">GUESS!</button>
+        <button type="submit" class="btn btn-dark text-white guessButton p-2 mb-5 mt-5">GUESS!</button>
       </div>
     </form>
     </div>
@@ -74,12 +74,8 @@
       </div>
       
       <div class="modal-footer text-center">
-        <form action="/options">
-        <button type="submit" class="btn btn-dark text-white playButton p-2 mb-3 mt-5">PLAY AGAIN</button>
-        </form>
-        <form action="/quit">
-        <button type="submit" class="btn btn-danger text-dark playButton p-2 mb-3 mt-5">QUIT</button>
-        </form>
+        <a href="/wordgame/options" class="btn btn-dark text-white playButton p-2 mb-3 mt-5">PLAY AGAIN</a>
+        <a href="/wordgame/quit" class="btn btn-danger text-dark playButton p-2 mb-3 mt-5">QUIT</a>
       </div>
     </div>
 <% } %>
