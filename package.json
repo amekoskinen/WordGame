@@ -13,6 +13,7 @@
     "@thatapicompany/thecatapi": "^1.0.2",
     "bootstrap": "^5.3.8",
     "connect-flash": "^0.1.1",
+    "connect-mongo": "^6.0.0",
     "dotenv": "^17.2.3",
     "ejs": "^4.0.1",
     "ejs-mate": "^4.0.0",

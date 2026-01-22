@@ -48,6 +48,12 @@ const playGame = async(req,res) => {
     }
     correctWord = req.session.word
     correctWord = correctWord.join("")
+    if (!req.session.score){
+      req.session.score = 1
+    }
+    else{
+      req.session.score ++
+    }
     return res.render('game', {player:req.session.player, answerObj, letters, correctWord: correctWord, catURL: catURL, winner:1,...answerObj})
   }
   if (req.session.round == 6){

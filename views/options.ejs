@@ -5,11 +5,9 @@
     <div class="highscore text-center mb-5 mt-3">
       <h1 id="highscore-title">HIGHSCORES</h1>
       <ul class="list-group">
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Morbi leo risus</li>
-        <li class="list-group-item">Porta ac consectetur ac</li>
-        <li class="list-group-item">Vestibulum at eros</li>
+        <% for (let i=0; i<5; i++){%>
+        <li class="list-group-item d-flex justify-content-between"><span>Name: <%=highscore[i].name%></span><span>Points: <%=highscore[i].points%></span></li>
+        <% } %>
       </ul>
     </div>
     <form action="/wordgame/options" method="POST">

@@ -8,25 +8,47 @@ const methodOverride = require('method-override');
 const ejsMate = require('ejs-mate');
 const session = require('express-session');
 const flash = require('connect-flash');
+const { MongoStore } = require('connect-mongo');
 
 const ExpressError = require('./utils/ExpressError');
 const wordGameRoute = require('./routes/wordGameRoute')
 
-const sessionOptions = { secret: 'NOTCONFIGURED', resave: false, saveUninitialized: false, 
-        cookie: {
-        httpOnly: true,
-        expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
-        maxAge: 1000 * 60 * 60 * 24 * 7
-       }
-}
+const dbURL = process.env.DB_URL || 'mongodb://localhost:27017/wordGame'
 
-mongoose.connect('mongodb://127.0.0.1:27017/wordGame');
+mongoose.connect(dbURL);
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => {
   console.log('Database connected');
 });
+
+const secret = process.env.SESSION_SECRET || "temporarysecret";
+
+const store = MongoStore.create({
+    mongoUrl: dbURL,
+    touchAfter: 24 * 60 * 60,
+    crypto: {
+            secret
+        }
+    });
+
+store.on("error", function (e) {
+    console.log("SESSION STORE ERROR", e)
+})
+
+const sessionOptions = { 
+        store,
+        name: "session",
+        secret, 
+        resave: false, 
+        saveUninitialized: false, 
+        cookie: {
+          httpOnly: true,
+          expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
+          maxAge: 1000 * 60 * 60 * 24 * 7
+        }
+}
 
 const app = express();
 app.engine('ejs', ejsMate);
