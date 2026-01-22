@@ -21,9 +21,7 @@ router.get('/options', async(req,res) => {
     const answerObj = req.session.answerObj || {};
     const player = req.session.player || ""
     const highscore = await Highscore.find({})
-    console.log("BEFORE", highscore)
     highscore.sort((a, b) => b.points - a.points);
-    console.log(highscore)
     res.render('options', {...answerObj, answerObj, letters, winner:0, catURL:"", correctWord:"", highscore, player})
 })
 
@@ -52,7 +50,7 @@ router.get('/quit', async (req, res) => {
   const newHighscore = await new Highscore({name: req.session.player, points: req.session.score})
   console.log(newHighscore)
   await newHighscore.save()
-  await mongoose.connection.close();
+  // await mongoose.connection.close();
   console.log('Server is shutting down...');
   res.render('quit')
 });
